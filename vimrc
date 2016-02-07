@@ -35,8 +35,8 @@ set noshowmode
  NeoBundle 'reedes/vim-pencil'
  NeoBundle 'vimwiki/vimwiki'
  NeoBundle 'reedes/vim-wordy'
- NeoBundle 'tomasr/molokai'
- NeoBundle 'chriskempson/base16-vim'
+ NeoBundle 'edkolev/tmuxline.vim'
+ NeoBundle 'vim-airline/vim-airline'
  call neobundle#end()
  " If there are uninstalled bundles found on startup,
  " this will conveniently prompt you to install them.
@@ -88,6 +88,9 @@ set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
 let g:miniBufExplForceSyntaxEnable = 1
+
+"Vim Airline
+
 
 "Colorscheme
 colorscheme solarized
