@@ -1,4 +1,4 @@
-set clipboard=unnamed           "paste the clipboard to unnamed register
+set clipboard=unnamedplus           "paste the clipboard to unnamed register
 set shortmess=atI               "remove message at vim start 
 set cmdheight=1                 "command line length
 set noswapfile
