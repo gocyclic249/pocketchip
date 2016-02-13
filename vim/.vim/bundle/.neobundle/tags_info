@@ -1,8 +1,8 @@
-base16-vim
 goyo.vim
-molokai
 neobundle.vim
 papercolor-theme
+tmuxline.vim
+vim-airline
 vim-colors-pencil
 vim-colors-solarized
 vim-pencil
