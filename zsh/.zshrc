@@ -90,15 +90,5 @@ alias db='dropbox-cli'
 alias hw='cd ~/Dropbox/schoolwork'
 alias grub-mk='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 #bindkey -v
-
-if [[ -z "$TMUX" ]] ;then
-        ID="`tmux ls | grep -vm1 attached | cut -d: -f1`" # get the id of a deattached session
-        if [[ -z "$ID" ]] ;then # if not available create a new one
-                tmux new-session
-            else
-                    tmux attach-session -t "$ID" # if available attach to it
-        fi
-fi
-
 export DEFAULT_USER=`whoami`
 export TERM="screen-256color"
