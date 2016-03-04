@@ -28,6 +28,7 @@ values."
      emacs-lisp
      git
      markdown
+     spell-checking
      (latex  :variables
              latex-build-command "LatexMk"
              latex-enable-auto-fill t)
@@ -39,9 +40,7 @@ values."
      ;; syntax-checking
      ;; version-control
      (shell :variables
-            shell-default-shell 'eshell
-            shell-protect-eshell-prompt nil)
-
+            shell-default-term-shell "/bin/zsh")
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -259,7 +258,8 @@ layers configuration. You are free to put any user code."
   (setq TeX-auto-save t)
   (setq TeX-PDF-mode t)
   (setq TeX-view-program-selection '((output-pdf "Okular")))
-  )
+)
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
