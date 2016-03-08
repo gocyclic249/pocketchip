@@ -251,7 +251,15 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+<<<<<<< HEAD
 (setq TeX-view-program-selection '((output-pdf "Okular")))
+  (setq-default TeX-master nil)
+  (setq TeX-parse-self t)
+  (setq LaTeX-always-use-Biber t)
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+  (setq TeX-auto-save t)
+  (setq TeX-PDF-mode t)
+  (setq TeX-view-program-selection '((output-pdf "Okular")))
 )
 
 
