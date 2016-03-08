@@ -17,7 +17,7 @@ XF86Launch5
     uxterm
 
 XF86Tools
-    uxterm -e vim
+    emacs
 
 super + shift + w 
     uxterm -title "weechat" -e weechat
