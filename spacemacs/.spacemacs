@@ -23,8 +23,9 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-      auto-completion
-     ;; better-defaults
+     auto-completion
+     better-defaults
+     themes-megapack
      emacs-lisp
      git
      markdown
@@ -101,7 +102,10 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-dark
+   dotspacemacs-themes '(sanityinc-solarized-light
+                         tao-yin
+                         tao-yang
+                         solarized-dark
                          spacemacs-light
                          spacemacs-dark
                          solarized-light
@@ -113,11 +117,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Inconsolata-dz for Powerline"
+                               :size 16
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -259,6 +263,8 @@ layers configuration. You are free to put any user code."
   (setq TeX-auto-save t)
   (setq TeX-PDF-mode t)
   (setq TeX-view-program-selection '((output-pdf "Okular")))
+  (add-hook 'text-mode-hook 'turn-on-auto-fill)
+  (setq-default fill-column 80)
 )
 
 
