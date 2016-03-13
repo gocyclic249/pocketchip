@@ -29,6 +29,7 @@ values."
      emacs-lisp
      git
      markdown
+     pandoc
      spell-checking
      (latex  :variables
              latex-build-command "LatexMk"
@@ -328,7 +329,8 @@ layers configuration. You are free to put any user code."
  '(TeX-show-compilation nil)
  '(org-agenda-files
    (quote
-    ("~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org"))))
+    ("~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org")))
+ '(org-directory "~/Dropbox/org/"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
