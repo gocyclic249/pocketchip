@@ -14,7 +14,7 @@ super + F10
     amixer set Master 5%+
 
 XF86Launch5
-    uxterm
+    dmenu_run
 
 XF86Tools
     emacs
