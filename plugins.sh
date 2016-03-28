@@ -2,7 +2,7 @@
 
 sudo apt-get update && sudo apt-get upgrade 
 
-sudo apt-get install emacs tmux zsh texlive-full pandoc stow
+sudo apt-get install emacs tmux zsh pandoc stow
 
 chsh -s /bin/zsh
 
@@ -27,3 +27,17 @@ stow vim
 stow spacemacs
 stow zsh
 stow Xresources
+
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+ssh-keygen -t rsa -b 4096
+
+cd ~/
+
+git clone https://github.com/powerline/fonts.git
+
+sh ~/fonts/install.sh
+
+sudo apt install texlive-full
+
+
