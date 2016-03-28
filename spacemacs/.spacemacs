@@ -256,14 +256,14 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-(setq TeX-view-program-selection '((output-pdf "Okular")))
+(setq TeX-view-program-selection '((output-pdf "Evince")))
   (setq-default TeX-master nil)
   (setq TeX-parse-self t)
   (setq LaTeX-always-use-Biber t)
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
   (setq TeX-auto-save t)
   (setq TeX-PDF-mode t)
-  (setq TeX-view-program-selection '((output-pdf "Okular")))
+  (setq TeX-view-program-selection '((output-pdf "Evince")))
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
   (setq-default fill-column 80)
 )
@@ -277,7 +277,7 @@ layers configuration. You are free to put any user code."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(LaTeX-command-style (quote (("" ""))))
- '(TeX-PDF-mode t t)
+ '(TeX-PDF-mode t)
  '(TeX-check-engine t)
  '(TeX-command-list
    (quote
@@ -325,12 +325,13 @@ layers configuration. You are free to put any user code."
      ("Clean" "TeX-clean" TeX-run-function nil t :help "Delete generated intermediate files")
      ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
      ("Other" "" TeX-run-command t t :help "Run an arbitrary command"))))
- '(TeX-master t t)
+ '(TeX-master t)
  '(TeX-show-compilation nil)
+ '(TeX-view-program-selection (quote ((output-pdf "Evince"))))
  '(battery-mode-line-limit 100)
  '(display-battery-mode t)
  '(fancy-battery-mode t)
- '(fancy-battery-show-percentage t)
+ '(fancy-battery-show-percentage t t)
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/notes.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org")))
