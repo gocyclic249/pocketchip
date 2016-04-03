@@ -103,22 +103,16 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(sanityinc-solarized-light
-                         tao-yin
-                         tao-yang
+   dotspacemacs-themes '(cyberpunk
+                         sanityinc-solarized-light
                          solarized-dark
-                         spacemacs-light
-                         spacemacs-dark
-                         solarized-light
-                         solarized-dark
-                         leuven
                          monokai
                          zenburn)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Inconsolata-dz for Powerline"
+   dotspacemacs-default-font '("Inconsolata"
                                :size 16
                                :weight normal
                                :width normal
@@ -193,7 +187,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -335,7 +329,9 @@ layers configuration. You are free to put any user code."
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/notes.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org")))
- '(org-directory "~/Dropbox/org/"))
+ '(org-directory "~/Dropbox/org/")
+ '(reftex-cite-format "\\parencite{%l}")
+ '(reftex-format-cite-function nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
