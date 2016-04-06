@@ -49,8 +49,6 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-                                      (server-start)
-                                      (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
                                       )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -263,6 +261,8 @@ layers configuration. You are free to put any user code."
   (setq TeX-view-program-selection '((output-pdf "Evince")))
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
   (setq-default fill-column 80)
+  (server-start)
+  (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
 )
 
 
