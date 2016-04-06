@@ -93,7 +93,7 @@ let g:miniBufExplForceSyntaxEnable = 1
 
 
 "Colorscheme
-colorscheme solarized
+colorscheme default
 set bg=dark
 
 "Pencil
