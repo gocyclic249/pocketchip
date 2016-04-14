@@ -21,6 +21,8 @@ rm -rf ~/.zshrc
 
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tmp 
+
 cd ~/dotfiles
 
 stow vim
@@ -37,7 +39,4 @@ cd ~/
 git clone https://github.com/powerline/fonts.git
 
 sh ~/fonts/install.sh
-
-sudo apt install texlive-full
-
 
