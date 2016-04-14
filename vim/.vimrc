@@ -35,7 +35,6 @@ set noshowmode
  NeoBundle 'reedes/vim-pencil'
  NeoBundle 'vimwiki/vimwiki'
  NeoBundle 'reedes/vim-wordy'
- NeoBundle 'edkolev/tmuxline.vim'
  NeoBundle 'vim-airline/vim-airline'
  call neobundle#end()
  " If there are uninstalled bundles found on startup,
