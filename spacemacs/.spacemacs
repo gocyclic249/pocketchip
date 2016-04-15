@@ -28,6 +28,8 @@ values."
      themes-megapack
      emacs-lisp
      git
+     shell-scripts
+     spotify
      markdown
      pandoc
      spell-checking
