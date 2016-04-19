@@ -1,0 +1,21 @@
+source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-light-16.muttrc
+source ~/.mutt/outlookrc
+macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/gmailrc<enter><change-folder>!<enter>'
+macro index <f5> '<sync-mailbox><enter-command>source ~/.mutt/outlookrc<enter><change-folder>!<enter>'
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+alternative_order text/plain text/html *
+auto_view text/html
+bind editor <Tab> complete-query
+bind editor ^T complete
+bind editor <space> noop
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+bind index G imap-fetch-mail
+macro index,pager B '<enter-command>toggle sidebar_visible<enter>'
+set imap_keepalive = 300
+set mail_check = 120
+set editor = "vim"
