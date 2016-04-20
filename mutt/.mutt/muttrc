@@ -17,5 +17,8 @@ bind index,pager \CO sidebar-open
 bind index G imap-fetch-mail
 macro index,pager B '<enter-command>toggle sidebar_visible<enter>'
 set imap_keepalive = 300
-set mail_check = 120
 set editor = "vim"
+set imap_check_subscribed
+set mail_check=60
+set timeout=10
+set net_inc=5

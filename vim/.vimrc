@@ -112,3 +112,4 @@ augroup END
 "Wiki Settings
 let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}]
 
+au BufRead /tmp/mutt-* set tw=72
