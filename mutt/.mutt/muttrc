@@ -22,3 +22,4 @@ set imap_check_subscribed
 set mail_check=60
 set timeout=10
 set net_inc=5
+set mailcap_path    = ~/.mutt/mailcap
