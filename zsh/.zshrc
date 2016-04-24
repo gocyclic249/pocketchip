@@ -83,8 +83,6 @@ export EDITOR='emacs -nw'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export BROWSER=w3m
-
 #source /usr/share/zsh/site-contrib/powerline.zsh
 alias hw='cd ~/Dropbox/schoolwork'
 alias grub-mk='sudo grub-mkconfig -o /boot/grub/grub.cfg'
