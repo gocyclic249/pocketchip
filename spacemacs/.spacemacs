@@ -45,6 +45,7 @@ values."
      ;; version-control
      (shell :variables
             shell-default-term-shell "/bin/zsh")
+     osx
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -115,7 +116,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Terminus"
+   dotspacemacs-default-font '("Times"
                                :size 18
                                :weight normal
                                :width normal
@@ -253,18 +254,13 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-(setq TeX-view-program-selection '((output-pdf "Evince")))
   (setq-default TeX-master nil)
   (setq TeX-parse-self t)
   (setq LaTeX-always-use-Biber t)
-  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
   (setq TeX-auto-save t)
   (setq TeX-PDF-mode t)
-  (setq TeX-view-program-selection '((output-pdf "Evince")))
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
   (setq-default fill-column 80)
-  (server-start)
-  (add-to-list 'auto-mode-alist '("/mutt" . mail-mode))
 )
 
 
@@ -280,7 +276,10 @@ layers configuration. You are free to put any user code."
  '(TeX-check-engine t)
  '(TeX-command-list
    (quote
-    (("LatexMk" "latexmk %(-PDF -pv -gg -silent)%S%(mode) %(file-line-error) %t" TeX-run-latexmk t
+    (("LatexMk" "latexmk %(-PDF)%S%(mode) %(file-line-error) %t" TeX-run-latexmk nil
+      (plain-tex-mode latex-mode doctex-mode)
+      :help "Run LatexMk")
+     ("LatexMk" "latexmk %(-PDF -pv -gg -silent)%S%(mode) %(file-line-error) %t" TeX-run-latexmk t
       (plain-tex-mode latex-mode doctex-mode)
       :help "Run LatexMk")
      ("TeX" "%(PDF)%(tex) %(file-line-error) %(extraopts) %`%S%(PDFout)%(mode)%' %t" TeX-run-TeX nil
@@ -306,7 +305,7 @@ layers configuration. You are free to put any user code."
       :help "Run ConTeXt until completion")
      ("BibTeX" "bibtex %s" TeX-run-BibTeX nil t :help "Run BibTeX")
      ("Biber" "biber %s" TeX-run-Biber nil t :help "Run Biber")
-     ("View" "%V" TeX-run-discard-or-function t t :help "Run Viewer")
+     ("View" "open -a Preview.app %s.pdf  " TeX-run-command t t :help "Run Viewer")
      ("Print" "%p" TeX-run-command t t :help "Print the file")
      ("Queue" "%q" TeX-run-background nil t :help "View the printer queue" :visible TeX-queue-command)
      ("File" "%(o?)dvips %d -o %f " TeX-run-dvips t t :help "Generate PostScript file")

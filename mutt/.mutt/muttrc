@@ -11,11 +11,9 @@ auto_view text/html
 bind editor <Tab> complete-query
 bind editor ^T complete
 bind editor <space> noop
-bind index,pager \CP sidebar-prev
-bind index,pager \CN sidebar-next
-bind index,pager \CO sidebar-open
 bind index G imap-fetch-mail
 macro index,pager B '<enter-command>toggle sidebar_visible<enter>'
+set smtp_authenticators = 'gssapi:login'
 set imap_keepalive = 300
 set editor = "vim"
 set imap_check_subscribed
