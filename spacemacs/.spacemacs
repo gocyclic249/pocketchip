@@ -261,6 +261,10 @@ layers configuration. You are free to put any user code."
   (setq TeX-PDF-mode t)
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
   (setq-default fill-column 80)
+  (setq reftex-default-bibliography '("~/Dropbox/schoolwork/bibliography.bib"))
+  (eval-after-load 'reftex-vars
+    '(progn 
+       (setq reftex-cite-format '((?\C-m . "[@%l]")))))
 )
 
 
@@ -329,12 +333,12 @@ layers configuration. You are free to put any user code."
  '(battery-mode-line-limit 100)
  '(display-battery-mode t)
  '(fancy-battery-mode t)
- '(fancy-battery-show-percentage t t)
+ '(fancy-battery-show-percentage t)
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/notes.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org")))
  '(org-directory "~/Dropbox/org/")
- '(reftex-cite-format "\\parencite{%l}")
+ '(reftex-cite-format " [@%l]")
  '(reftex-format-cite-function nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
