@@ -108,6 +108,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light):
    dotspacemacs-themes '(
+                         zenburn
                          sanityinc-solarized-light
                          solarized-dark
                          monokai
@@ -116,7 +117,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Times"
+   dotspacemacs-default-font '("Courier New"
                                :size 18
                                :weight normal
                                :width normal
@@ -333,12 +334,12 @@ layers configuration. You are free to put any user code."
  '(battery-mode-line-limit 100)
  '(display-battery-mode t)
  '(fancy-battery-mode t)
- '(fancy-battery-show-percentage t)
+ '(fancy-battery-show-percentage t t)
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/notes.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org")))
  '(org-directory "~/Dropbox/org/")
- '(reftex-cite-format " [@%l]")
+ '(reftex-cite-format "\\parencite{%l}")
  '(reftex-format-cite-function nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
