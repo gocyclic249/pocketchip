@@ -86,4 +86,6 @@ export EDITOR='emacs -nw'
 #source /usr/share/zsh/site-contrib/powerline.zsh
 alias hw='cd ~/Dropbox/schoolwork'
 alias grub-mk='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias gmail='mutt -F ~/.mutt/gmailrc'
+alias outlook='mutt -F ~/.mutt/outlookrc'
 bindkey -v
