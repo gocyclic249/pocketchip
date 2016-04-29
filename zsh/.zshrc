@@ -64,7 +64,7 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='emacs -nw'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -86,6 +86,6 @@ export EDITOR='emacs -nw'
 #source /usr/share/zsh/site-contrib/powerline.zsh
 alias hw='cd ~/Dropbox/schoolwork'
 alias grub-mk='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias gmail='mutt -F ~/.mutt/gmailrc'
-alias outlook='mutt -F ~/.mutt/outlookrc'
+alias gmail='cd ~/Downloads/ && mutt -F ~/.mutt/gmailrc'
+alias outlook='cd ~/Downloads/ && mutt -F ~/.mutt/outlookrc'
 bindkey -v
