@@ -340,7 +340,8 @@ layers configuration. You are free to put any user code."
     ("~/Dropbox/org/notes.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org")))
  '(org-directory "~/Dropbox/org/")
  '(reftex-cite-format "\\parencite{%l}")
- '(reftex-format-cite-function nil))
+ '(reftex-format-cite-function nil)
+ '(reftex-plug-into-AUCTeX (quote (nil nil t t t))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
