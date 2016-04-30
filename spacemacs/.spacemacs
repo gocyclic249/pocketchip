@@ -263,11 +263,7 @@ layers configuration. You are free to put any user code."
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
   (setq-default fill-column 80)
   (setq reftex-default-bibliography '("~/Dropbox/schoolwork/bibliography.bib"))
-  (eval-after-load 'reftex-vars
-    '(progn 
-       (setq reftex-cite-format '((?\C-m . "[@%l]")))))
 )
-
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -335,10 +331,14 @@ layers configuration. You are free to put any user code."
  '(display-battery-mode t)
  '(fancy-battery-mode t)
  '(fancy-battery-show-percentage t t)
+ '(nrepl-message-colors
+   (quote
+    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/notes.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org")))
  '(org-directory "~/Dropbox/org/")
+ '(pandoc-data-dir "~/Dropbox/schoolwork/pandoc/")
  '(reftex-cite-format "\\parencite{%l}")
  '(reftex-format-cite-function nil))
 (custom-set-faces
