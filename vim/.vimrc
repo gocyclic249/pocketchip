@@ -82,15 +82,6 @@ filetype plugin on
 syntax on
 filetype indent on              "loading of indent files for all formats
 
-"Powerline
-set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim
-set laststatus=2
-let g:Powerline_symbols = 'fancy'
-let g:miniBufExplForceSyntaxEnable = 1
-
-"Vim Airline
-
-
 "Colorscheme
 colorscheme default
 set bg=dark

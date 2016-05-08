@@ -263,7 +263,21 @@ layers configuration. You are free to put any user code."
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
   (setq-default fill-column 80)
   (setq reftex-default-bibliography '("~/Dropbox/schoolwork/bibliography.bib"))
-)
+  (setq org-directory "~/Dropbox/org")
+  (setq org-default-notes-file "~/Dropbox/org/refile.org")
+
+
+;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
+(setq org-capture-templates
+      (quote (("t" "Todo" entry (file "~/Dropbox/org/refile.org")
+               "* TODO %?\n%U\n%a\n")
+              ("n" "Note" entry (file "~/Dropbox/org/refile.org")
+               "* %? :NOTE:\n%U\n%a\n")
+              ("j" "Journal" entry (file+datetree "~/Dropbox/org/diary.org")
+               "* %?\n%U\n")
+              ("a" "Appointment" entry (file "~/Dropbox/org/Appointments.org")
+               "* Appointment with %? :MEETING:\n%U")
+))))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -273,7 +287,7 @@ layers configuration. You are free to put any user code."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(LaTeX-command-style (quote (("" ""))))
- '(TeX-PDF-mode t)
+ '(TeX-PDF-mode t t)
  '(TeX-check-engine t)
  '(TeX-command-list
    (quote
@@ -324,7 +338,7 @@ layers configuration. You are free to put any user code."
      ("Clean" "TeX-clean" TeX-run-function nil t :help "Delete generated intermediate files")
      ("Clean All" "(TeX-clean t)" TeX-run-function nil t :help "Delete generated intermediate and output files")
      ("Other" "" TeX-run-command t t :help "Run an arbitrary command"))))
- '(TeX-master t)
+ '(TeX-master t t)
  '(TeX-show-compilation nil)
  '(TeX-view-program-selection (quote ((output-pdf "Evince"))))
  '(battery-mode-line-limit 100)
@@ -334,14 +348,17 @@ layers configuration. You are free to put any user code."
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(org-agenda-diary-file (quote diary-file))
  '(org-agenda-files
    (quote
-    ("~/Dropbox/org/notes.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org")))
+    ("~/Dropbox/org/notes.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org" "~/Dropbox/org/refile.org")))
+ '(org-datetree-add-timestamp nil)
+ '(org-default-notes-file "refile.org")
  '(org-directory "~/Dropbox/org/")
  '(pandoc-data-dir "~/Dropbox/schoolwork/pandoc/")
  '(reftex-cite-format "\\parencite{%l}")
  '(reftex-format-cite-function nil)
- '(reftex-plug-into-AUCTeX (quote (nil nil t t t))))
+ '(reftex-plug-into-AUCTeX (quote (nil nil t t t)) t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
