@@ -88,5 +88,6 @@ alias grub-mk='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias gmail='cd ~/Downloads/ && mutt -F ~/.mutt/gmailrc'
 alias outlook='cd ~/Downloads/ && mutt -F ~/.mutt/outlookrc'
 alias getmusic='youtube-dl --add-metadata -x --audio-format mp3 -o "%(title)s.%(ext)s"'
+alias emacs='emacs -nw'
 bindkey -v
 export TERM=xterm-256color
