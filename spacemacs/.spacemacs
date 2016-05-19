@@ -32,6 +32,7 @@ values."
      spotify
      markdown
      pandoc
+     erc
      spell-checking
      (latex  :variables
              latex-build-command "LatexMk"
@@ -75,7 +76,7 @@ values."
    ;; This variable has no effect if Emacs is launched with the parameter
    ;; `--insecure' which forces the value of this variable to nil.
    ;; (default t)
-   dotspacemacs-elpa-https t
+   dotspacemacs-elpa-https nil  
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    dotspacemacs-elpa-timeout 5
    ;; If non nil then spacemacs will check for updates at startup
@@ -269,10 +270,12 @@ layers configuration. You are free to put any user code."
 
 ;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
 (setq org-capture-templates
-      (quote (("t" "Todo" entry (file "~/Dropbox/org/refile.org")
+      (quote (("t" "Todo" entry (file "~/Dropbox/org/notes.org")
                "* TODO %?\n%U\n%a\n")
-              ("n" "Note" entry (file "~/Dropbox/org/refile.org")
+              ("n" "Note" entry (file "~/Dropbox/org/notes.org")
                "* %? :NOTE:\n%U\n%a\n")
+              ("w" "Task" entry (file "~/Dropbox/org/work.org")
+               "* TODO %? \nWho: %^{Who}\nWhat: %^{What}\nWhere: %^{Where}\nWhy: %^{Why}\nWhen:\nSchedule: %^{Schedule}t\n:Tasking:\n")
               ("j" "Journal" entry (file+datetree "~/Dropbox/org/diary.org")
                "* %?\n%U\n")
               ("a" "Appointment" entry (file "~/Dropbox/org/Appointments.org")
@@ -343,6 +346,9 @@ layers configuration. You are free to put any user code."
  '(TeX-view-program-selection (quote ((output-pdf "Evince"))))
  '(battery-mode-line-limit 100)
  '(display-battery-mode t)
+ '(erc-auto-set-away t)
+ '(erc-autoaway-message "I saw a shiny object and wandered off")
+ '(erc-rename-buffers t)
  '(fancy-battery-mode t)
  '(fancy-battery-show-percentage t t)
  '(nrepl-message-colors
@@ -352,9 +358,38 @@ layers configuration. You are free to put any user code."
  '(org-agenda-files
    (quote
     ("~/Dropbox/org/notes.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org" "~/Dropbox/org/refile.org")))
+ '(org-capture-templates
+   (quote
+    (("w" "Tasking" entry
+      (file "~/Dropbox/org/work.org")
+      "* TODO Task: %? Assigned: %U
+Who: %^{Who}
+What: %^{What}
+Where: %^{Where}
+Why: %^{Why}
+SCHEDULED: %^{Scheduled}T ")
+     ("t" "Todo" entry
+      (file "~/Dropbox/org/notes.org")
+      "* TODO %?
+%U")
+     ("n" "Note" entry
+      (file "~/Dropbox/org/refile.org")
+      "* %? :NOTE:
+%U
+%a
+")
+     ("j" "Journal" entry
+      (file+datetree "~/Dropbox/org/diary.org")
+      "* %?
+%U
+")
+     ("a" "Appointment" entry
+      (file "~/Dropbox/org/Appointments.org")
+      "* Appointment with %? :MEETING:
+%U"))) t)
  '(org-datetree-add-timestamp nil)
- '(org-default-notes-file "refile.org")
- '(org-directory "~/Dropbox/org/")
+ '(org-default-notes-file "refile.org" t)
+ '(org-directory "~/Dropbox/org/" t)
  '(pandoc-data-dir "~/Dropbox/schoolwork/pandoc/")
  '(reftex-cite-format "\\parencite{%l}")
  '(reftex-format-cite-function nil)
