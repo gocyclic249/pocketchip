@@ -91,3 +91,4 @@ alias getmusic='youtube-dl --add-metadata -x --audio-format mp3 -o "%(title)s.%(
 alias emacs='emacs -nw'
 bindkey -v
 export TERM=xterm-256color
+fpath=(/usr/local/share/zsh-completions $fpath)
