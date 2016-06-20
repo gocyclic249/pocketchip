@@ -31,6 +31,7 @@ values."
      shell-scripts
      spotify
      markdown
+     gnus
      pandoc
      erc
      spell-checking
@@ -109,7 +110,7 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light):
    dotspacemacs-themes '(
-                         zenburn
+                         monokai
                          sanityinc-solarized-light
                          solarized-dark
                          monokai
@@ -262,11 +263,32 @@ layers configuration. You are free to put any user code."
   (setq TeX-auto-save t)
   (setq TeX-PDF-mode t)
   (add-hook 'text-mode-hook 'turn-on-auto-fill)
-  (setq-default fill-column 80)
+  (setq-default fill-column 72)
   (setq reftex-default-bibliography '("~/Dropbox/schoolwork/bibliography.bib"))
   (setq org-directory "~/Dropbox/org")
-  (setq org-default-notes-file "~/Dropbox/org/refile.org")
+  (setq org-default-notes-file "~/Dropbox/org/notes.org")
 
+(setq gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\”]\”[#’()]")
+(setq nnml-directory "~/.gmail")
+(setq message-directory "~/.gmail")
+
+;; Get email, and store in nnml
+(setq gnus-secondary-select-methods
+      '(
+        (nnimap "gmail"
+                (nnimap-address
+                 "imap.gmail.com")
+                (nnimap-server-port 993)
+                (nnimap-stream ssl))
+        ))
+
+;; Send email via Gmail:
+(setq message-send-mail-function 'smtpmail-send-it
+      smtpmail-default-smtp-server "smtp.gmail.com")
+
+;; Archive outgoing email in Sent folder on imap.gmail.com:
+(setq gnus-message-archive-method '(nnimap "imap.gmail.com")
+      gnus-message-archive-group "[Gmail]/Sent Mail")
 
 ;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
 (setq org-capture-templates
@@ -280,6 +302,11 @@ layers configuration. You are free to put any user code."
                "* %?\n%U\n")
               ("a" "Appointment" entry (file "~/Dropbox/org/Appointments.org")
                "* Appointment with %? :MEETING:\n%U")
+             ("e" "Event" entry
+               (file "~/Dropbox/org/notes.org")
+               "* %? :HAPPENING: 
+%U
+%a")
 ))))
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -351,48 +378,17 @@ layers configuration. You are free to put any user code."
  '(erc-rename-buffers t)
  '(fancy-battery-mode t)
  '(fancy-battery-show-percentage t t)
+ '(flyspell-auto-correct-binding [67108923])
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(org-agenda-diary-file (quote diary-file))
  '(org-agenda-files
    (quote
-    ("~/Dropbox/org/notes.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/work.org" "~/Dropbox/org/refile.org")))
- '(org-capture-templates
-   (quote
-    (("w" "Tasking" entry
-      (file "~/Dropbox/org/work.org")
-      "* TODO Task: %? Assigned: %U
-Who: %^{Who}
-What: %^{What}
-Where: %^{Where}
-Why: %^{Why}
-SCHEDULED: %^{Scheduled}T ")
-     ("t" "Todo" entry
-      (file "~/Dropbox/org/notes.org")
-      "* TODO %?
-%U")
-     ("n" "Note" entry
-      (file "~/Dropbox/org/refile.org")
-      "* %? :NOTE:
-%U
-%a
-")
-     ("j" "Journal" entry
-      (file+datetree "~/Dropbox/org/diary.org")
-      "* %?
-%U
-")
-     ("a" "Appointment" entry
-      (file "~/Dropbox/org/Appointments.org")
-      "* Appointment with %? :MEETING:
-%U"))))
+    ("~/Dropbox/org/work.org" "~/Dropbox/org/Appointments.org" "~/Dropbox/org/notes.org" "~/Dropbox/org/CST2016.org")))
  '(org-datetree-add-timestamp nil)
- '(org-default-notes-file "refile.org")
  '(org-directory "~/Dropbox/org/")
- '(org-todo-keywords (quote ((sequence "TODO" "TASKED TO" "CHANGE" "DONE"))))
  '(pandoc-data-dir "~/Dropbox/schoolwork/pandoc/")
- '(reftex-cite-format "\\parencite{%l}")
  '(reftex-format-cite-function nil)
  '(reftex-plug-into-AUCTeX (quote (nil nil t t t)) t))
 (custom-set-faces
@@ -400,5 +396,6 @@ SCHEDULED: %^{Scheduled}T ")
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:background nil))))
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))

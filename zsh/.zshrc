@@ -63,7 +63,7 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='vim'
+export EDITOR='emacs -nw'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -88,6 +88,7 @@ alias grub-mk='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias gmail='cd ~/Downloads/ && mutt -F ~/.mutt/gmailrc'
 alias outlook='cd ~/Downloads/ && mutt -F ~/.mutt/outlookrc'
 alias getmusic='youtube-dl --add-metadata -x --audio-format mp3 -o "%(title)s.%(ext)s"'
+alias download='youtube-dl --add-metadata -o "%(title)s.%(ext)s"'
 alias callhome='ssh -p 8008 phonehome.webhop.me'
 alias emacs='emacs -nw'
 bindkey -v
