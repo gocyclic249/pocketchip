@@ -6,7 +6,7 @@ export ZSH=~/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
-ZSH_THEME="ys"
+ZSH_THEME="jnrowe"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -89,7 +89,8 @@ alias gmail='cd ~/Downloads/ && mutt -F ~/.mutt/gmailrc'
 alias outlook='cd ~/Downloads/ && mutt -F ~/.mutt/outlookrc'
 alias getmusic='youtube-dl --add-metadata -x --audio-format mp3 -o "%(title)s.%(ext)s"'
 alias download='youtube-dl --add-metadata -o "%(title)s.%(ext)s"'
-alias callhome='ssh -p 8008 phonehome.webhop.me'
+alias callhome='ssh -p 8008 eleventh@phonehome.webhop.me'
+alias cmail='ssh -p 8008 eleventh@phonehome.webhop.me -t "mutt"'
 alias emacs='emacs -nw'
 bindkey -v
 export TERM=xterm-256color

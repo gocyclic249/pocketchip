@@ -2,12 +2,9 @@
 
 sudo apt-get update && sudo apt-get upgrade 
 
-sudo apt-get install emacs tmux zsh pandoc stow
+sudo apt-get install vim stow
 
 chsh -s /bin/zsh
-
-rm -rf ~/.emacs.d
-rm -rf ~/.emacs
 
 
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > neo.sh
@@ -19,9 +16,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 rm -rf ~/.zshrc
 
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tmp 
 
 cd ~/dotfiles
 
