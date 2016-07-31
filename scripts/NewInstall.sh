@@ -2,7 +2,7 @@
 
 sudo apt-get update && sudo apt-get upgrade 
 
-sudo apt-get install vim stow
+sudo apt-get install vim stow acpitool acpid tmux
 
 chsh -s /bin/zsh
 
@@ -21,9 +21,8 @@ rm -rf ~/.zshrc
 cd ~/dotfiles
 
 stow vim
-stow spacemacs
 stow zsh
-stow Xresources
+stow tmux
 
 mkdir ~/.ssh
 chmod 700 ~/.ssh
