@@ -92,6 +92,7 @@ alias download='youtube-dl --add-metadata -o "%(title)s.%(ext)s"'
 alias callhome='ssh -p 8008 eleventh@phonehome.webhop.me'
 alias cmail='ssh -p 8008 eleventh@phonehome.webhop.me -t "mutt"'
 alias emacs='emacs -nw'
+alias mux='tmux attach -t pocket || tmux new -s pocket'
 bindkey -v
 export TERM=xterm-256color
 fpath=(/usr/local/share/zsh-completions $fpath)
